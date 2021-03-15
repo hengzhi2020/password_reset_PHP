@@ -1,6 +1,7 @@
 <?php
 include("stylecss.php");
-require 'sql_connect.php';
+require 'connect_sql.php';
+require 'config.php';
 ?>
 
 <html lang="en">
@@ -14,22 +15,21 @@ require 'sql_connect.php';
 <body class="std-body std-body-text">
     <?php
     echo "<h4>GENISIS Login Username: $loginUserName </h4>";
+    echo $myPATH;
     ?>
-    <p id="email-confirm">An email has been sent to your mailbox.</p>
+    <p id="email-confirm">An email has been sent to your VA Email.</p>
     <br>
     <hr>
     <?php
     $forMyLink = password_hash($loginUserName, PASSWORD_DEFAULT);
     $forMyLink = TRIM($forMyLink);
     if (isset($_POST['sendEmail'])) {
-
         $myVAEmail = $_POST['VAemail'];
-
         // This is for Link-Click inside your email
         $emailContent = "<h3>Please click this unique link to update your password</h3>
-        <a href='localhost/resetpassword/newpassword.php'>$forMyLink</a><br><br>";
+        <a href='$myPATH/newpassword.php'>$forMyLink</a><br><br>";
 
-        // This is for Link-Click at Local DEV mode
+        // This is for Link-Click at
         /*  
         $emailContent = "<h3>Please click this unique link to update your password</h3>
         <a href='newpassword.php'>$forMyLink</a><br><br>";

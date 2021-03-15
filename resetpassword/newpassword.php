@@ -1,6 +1,7 @@
 <?php
 include("stylecss.php");
-require 'sql_connect.php';
+require 'connect_sql.php';
+require 'config.php';
 ?>
 
 <html lang="en">
@@ -27,7 +28,7 @@ require 'sql_connect.php';
         }
         */
         ?>
-        <form action='/resetpassword/newpassword.php' method="POST">
+        <form action='<?php $myPATH ?>newpassword.php' method="POST">
             <table align="center">
                 <p align="center" id="reset-head">Reset Your Password</p>
                 <tr>

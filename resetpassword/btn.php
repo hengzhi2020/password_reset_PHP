@@ -1,12 +1,12 @@
 <?php
 include("stylecss.php");
+require 'config.php';
 ?>
 
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>addButton</title>
 
@@ -14,7 +14,7 @@ include("stylecss.php");
 
 <body class="std-body">
     <div class="send-email">
-        <form action="/resetpassword/emailaddress.php"><br>
+        <form action='<?php $myPATH ?>emailaddress.php'><br>
             <button type="submit" id="cmp-button">
                 <i class='fas fa-edit' style='font-size:36px;color:#007A7C;margin-top:50px;'></i><br>
                 <h2 class="std-body-text">Password-Reset</h2>
